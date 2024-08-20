@@ -1,0 +1,17 @@
+Hello there!
+
+This is a sample text file that we'll use to demonstrate the `cat` command in Unix-like operating systems.
+
+The `cat` command is commonly used to display the contents of a file on the terminal.
+
+Let's see how it works:
+
+1. Open your terminal.
+2. Navigate to the directory where this file is located.
+3. Type `cat filename.txt` and press Enter.
+
+You should see the entire contents of this file printed on the terminal.
+
+That's it for the demonstration!
+
+Feel free to modify this file and experiment with the `cat` command further.
