@@ -9,15 +9,13 @@ impl File {
         Self(path)
     }
 
-    pub fn read(&self) -> Result<(), Error> {
+    pub fn read(&self) -> Result<String, Error> {
         let contents = fs::read_to_string(&self.0)?;
 
         if contents.is_empty() {
             return Err(Error("File looks empty!".to_string()));
         }
 
-        println!("{}", contents);
-
-        Ok(())
+        Ok(contents)
     }
 }
