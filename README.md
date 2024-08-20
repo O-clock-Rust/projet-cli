@@ -21,6 +21,16 @@ Ainsi, par exemple, lorsqu'on lance la commande `cat README.md`, cela nous affic
 3. Ton programme doit permettre de renvoyer des erreurs compréhensibles par l'utilisateur. Cela implique de créer un `Error` spécifique, implémentant les traits nécessaires.
 4. Le code de ton programme doit être découpé et rangé en modules
 
+### Bonus
+
+Tu penses avoir terminé ? Tu devrais toujours ajouter des tests à ton programme.
+
+Ajoute des test pour vérifier que tu gères bien les cas suivants :
+- le fichier existe et comporte du contenu
+- le fichier existe mais est vide
+- le fichier n'existe pas
+- le fichier saisi est vide ou invalide
+
 ## Help !
 
 <details>
