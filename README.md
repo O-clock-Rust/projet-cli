@@ -1,8 +1,8 @@
 # Projet 1 : Construire un CLI en Rust
 
-Vous connaissez sans doute quelques commandes terminal telles que `cd`, `mkdir`, `cp` ou encore... `cat`.
+Tu connais sans doute quelques commandes terminal telles que `cd`, `mkdir`, `cp` ou encore... `cat`.
 
-Afin de mettre en pratique ce qu'on a vu jusqu'ici en Rust, on vous propose de recréer une version (_un peu plus humble_) de la commande `cat` !
+Afin de mettre en pratique ce qu'on a vu jusqu'ici en Rust, on te propose de recréer une version (_un peu plus humble_) de la commande `cat` !
 
 A la fin de ce projet, on devrait être capable de reproduire le fonctionnement basique de la commande, qui est d'afficher le contenu d'un fichier dans la console.
 
