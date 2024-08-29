@@ -6,7 +6,7 @@
 ///   2. lire le fichier README.md
 ///
 ///   3. afficher le résultat
-use std::env;
+use std::{env, fs};
 
 fn main() -> Result<(), String> {
     let args: Vec<String> = env::args().collect();
@@ -19,7 +19,10 @@ fn main() -> Result<(), String> {
         ));
     }
 
-    println!("Continue");
+    match fs::read_to_string(&args[1]) {
+        Ok(content) => println!("{}", content),
+        Err(e) => println!("{}", e),
+    }
 
     Ok(())
 }
