@@ -8,7 +8,18 @@
 ///   3. afficher le résultat
 use std::env;
 
-fn main() {
+fn main() -> Result<(), String> {
     let args: Vec<String> = env::args().collect();
-    println!("{:#?}", args);
+    // println!("{:#?}", args);
+
+    if args.len() < 2 {
+        return Err(String::from(
+            "vous devez fournir un chemin de fichier à lire \
+            → `$ cargo run -- sample.txt`",
+        ));
+    }
+
+    println!("Continue");
+
+    Ok(())
 }
