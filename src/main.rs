@@ -1,3 +1,4 @@
+use error::{AppError, AppErrorKind};
 use file::File;
 /// Étapes :
 ///
@@ -9,6 +10,7 @@ use file::File;
 ///   3. afficher le résultat
 use std::env;
 
+mod error;
 mod file;
 
 fn main() -> Result<(), String> {
@@ -16,10 +18,7 @@ fn main() -> Result<(), String> {
     // println!("{:#?}", args);
 
     if args.len() < 2 {
-        return Err(String::from(
-            "vous devez fournir un chemin de fichier à lire \
-            → `$ cargo run -- sample.txt`",
-        ));
+        return Err(AppError::from(AppErrorKind::NoArgs).to_string());
     }
 
     let path = &args[1];

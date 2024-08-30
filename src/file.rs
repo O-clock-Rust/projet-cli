@@ -1,4 +1,6 @@
-use std::{fs, io::Error};
+use std::fs;
+
+use crate::error::AppError;
 
 pub struct File {
     pub path: String,
@@ -13,13 +15,13 @@ impl File {
         }
     }
 
-    pub fn read(&mut self) -> Result<String, Error> {
+    pub fn read(&mut self) -> Result<String, AppError> {
         match fs::read_to_string(&self.path) {
             Ok(file_content) => {
                 self.content = Some(file_content.clone());
                 Ok(file_content)
             }
-            Err(e) => Err(e),
+            Err(e) => Err(AppError::from(e)),
         }
     }
 
@@ -34,7 +36,7 @@ impl File {
 
                 println!("{}", result);
             }
-            Err(e) => println!("{}", e),
+            Err(e) => eprintln!("Error: {}", e),
         }
     }
 }
