@@ -1,3 +1,4 @@
+use file::File;
 /// Étapes :
 ///
 ///   1. récupérer les arguments de la commande
@@ -6,7 +7,9 @@
 ///   2. lire le fichier README.md
 ///
 ///   3. afficher le résultat
-use std::{env, fs};
+use std::env;
+
+mod file;
 
 fn main() -> Result<(), String> {
     let args: Vec<String> = env::args().collect();
@@ -19,10 +22,10 @@ fn main() -> Result<(), String> {
         ));
     }
 
-    match fs::read_to_string(&args[1]) {
-        Ok(content) => println!("{}", content),
-        Err(e) => println!("{}", e),
-    }
+    let path = &args[1];
+    let mut file = File::new(path.to_string());
+
+    file.print();
 
     Ok(())
 }
