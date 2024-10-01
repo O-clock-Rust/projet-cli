@@ -10,12 +10,12 @@ impl File {
     }
 
     pub fn read(&self) -> Result<String, Error> {
-        let contents = fs::read_to_string(&self.0)?;
+        let content = fs::read_to_string(&self.0)?;
 
-        if contents.is_empty() {
-            return Err(Error("File looks empty!".to_string()));
+        if content.is_empty() {
+            return Err(Error(String::from("le fichier est vide")));
         }
 
-        Ok(contents)
+        Ok(content)
     }
 }
